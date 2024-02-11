@@ -1,45 +1,54 @@
 import React, { useState } from 'react';
+import Postlist from './components/PostList';
 
+import './styles/App.css'
 
 function App() {
   
-
-  const [likes, setlikes] = useState(0)
-
-
-  const [value, setValue] = useState('text')
-
-  function increment(){
-    setlikes(likes +1)
-    console.log(likes)
-  }
-
-  function dec (){
-    if (likes >0){
-      setlikes(likes-1)
-      console.log(likes)
-    }
+  const [post, setPost] = useState([
+    {id: 1, title: "JS", body: "js langvage" },
+    {id: 2, title: "C++", body: "C++ langvage" },
+    {id: 3, title: "Python", body: "Pytjon langvage" },
+    {id: 4, title: "React", body: "R langvage" },
+    {id: 5, title: "C#", body: "C# langvage" }
 
 
-  }
+  ])
+  const [post2, setPost2] = useState([
+    {id: 1, title: "hhh", body: "js langvage" },
+    {id: 2, title: "34r", body: "C++ langvage" },
+    {id: 3, title: "efrerf", body: "Pytjon langvage" },
+    {id: 4, title: "efref", body: "R langvage" },
+    {id: 5, title: "erfer", body: "C# langvage" }
+
+
+  ])
+
 
 
   return (
     <div className="App">
-      <h1>{likes}</h1>
-      <button onClick= {increment} > Increment</button>
-      <button onClick= {dec} > Decriment </button>
-      <h1>{value}</h1>
-      <input 
-        type='text' 
-        value={value}
-        onChange={event => setValue(event.target.value)}
-        />
+
+<div className='input'>
+      <input placeholder='enter' >
+      
+      </input>
+     </div>
+
+      <div className='lists'>
+      <Postlist posts={post} title={"test titlref"}/>
+      <Postlist posts={post2} title={"test title2 "}/>
+      <Postlist posts={post} title={"sdsdf"}/>
 
 
+
+
+      </div>
+      <a className ="link"  href='#'>link</a>
      
 
-
+      
+      
 
     </div>
   );
