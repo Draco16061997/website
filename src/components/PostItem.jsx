@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import logo from "./react.png"
+
 
 const Postitem = (props)=>{
 
@@ -13,8 +15,12 @@ const Postitem = (props)=>{
                  </div>
             </div>
             <div className='post__btns'>
-                     <button onClick={()=> console.log("CLICED")}>Delete</button>
+                     <button onClick={()=> alert("CLICED")}>Delete</button>
+                     <a className ="link"  href='https://www.youtube.com'>link</a>
+                     <img className="logo" src={logo}/>
+
              </div>
+            
 
         </div>
 
